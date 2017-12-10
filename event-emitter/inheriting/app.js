@@ -1,10 +1,18 @@
+'use strict';
+
 let EventEmitter = require( 'events' );
 const util = require( 'util' );
 
-function Greeter() {
-    // JS equivalent to 'super'
-    EventEmitter.call(this);
-    this.greeting = 'Hello world!';
+
+class Greeter extends EventEmitter {
+    constructor() {
+        super();
+        this.greeting = 'Hello world!';
+    }
+
+    greet( data ) {
+        console.log( `${this.greeting}: ${data}` )
+    }
 }
 
 function Custom() {
@@ -12,16 +20,10 @@ function Custom() {
 }
 
 util.inherits( Custom, EventEmitter );
-util.inherits( Greeter, EventEmitter );
 
 Custom.prototype.method = function ( data ) {
     console.log( 'hello' );
     this.emit( 'method', data );
-};
-
-Greeter.prototype.greet = function ( data ) {
-    console.log( this.greeting + ': ' + data );
-    this.emit( 'greet', data );
 };
 
 let greeter1 = new Greeter();
