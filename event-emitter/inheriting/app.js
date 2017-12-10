@@ -2,18 +2,7 @@
 
 let EventEmitter = require( 'events' );
 const util = require( 'util' );
-
-
-class Greeter extends EventEmitter {
-    constructor() {
-        super();
-        this.greeting = 'Hello world!';
-    }
-
-    greet( data ) {
-        console.log( `${this.greeting}: ${data}` )
-    }
-}
+let Greeter = require( './greeter' );
 
 function Custom() {
     this.data = "done";
