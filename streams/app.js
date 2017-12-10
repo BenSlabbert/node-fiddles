@@ -5,10 +5,9 @@ let readable = fs.createReadStream( __dirname + '/data.txt', {
     highWaterMark: 16 * 1024
 } );
 
-let writeable = fs.createWriteStream(__dirname + '/copy.txt');
-
+let writeable = fs.createWriteStream( __dirname + '/copy.txt' );
 
 readable.on( 'data', function ( chunk ) {
     console.log( chunk );
-    writeable.write(chunk);
+    writeable.write( chunk );
 } );
