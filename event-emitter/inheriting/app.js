@@ -1,5 +1,5 @@
-var EventEmitter = require('events');
-var util = require('util');
+let EventEmitter = require( 'events' );
+const util = require( 'util' );
 
 function Greeter() {
     this.greeting = 'Hello world!';
@@ -9,31 +9,31 @@ function Custom() {
     this.data = "done";
 }
 
-util.inherits(Custom, EventEmitter);
-util.inherits(Greeter, EventEmitter);
+util.inherits( Custom, EventEmitter );
+util.inherits( Greeter, EventEmitter );
 
-Custom.prototype.method = function (data) {
-    console.log('hello');
-    this.emit('method', data);
+Custom.prototype.method = function ( data ) {
+    console.log( 'hello' );
+    this.emit( 'method', data );
 };
 
-Greeter.prototype.greet = function (data) {
-    console.log(this.greeting + ': ' + data);
-    this.emit('greet', data);
+Greeter.prototype.greet = function ( data ) {
+    console.log( this.greeting + ': ' + data );
+    this.emit( 'greet', data );
 };
 
-var greeter1 = new Greeter();
-var cust = new Custom();
+let greeter1 = new Greeter();
+let cust = new Custom();
 
-cust.on('method', function (data) {
-    console.log('called method method...' + data);
-});
+cust.on( 'method', function ( data ) {
+    console.log( `called method method...${data}` );
+} );
 
 
-cust.method('ola');
+cust.method( 'ola' );
 
-greeter1.on('greet', function (data) {
-    console.log('A greeting: ' + data);
-});
+greeter1.on( 'greet', function ( data ) {
+    console.log( 'A greeting: ' + data );
+} );
 
-greeter1.greet('Ben');
+greeter1.greet( 'Ben' );
