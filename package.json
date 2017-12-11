@@ -1,0 +1,9 @@
+{
+  "name": "understand-nodejs",
+  "version": "0.0.1",
+  "dependencies": {
+    "canvas": "^1.6.7",
+    "jsbarcode": "^3.8.0",
+    "qrcode": "^1.0.0"
+  }
+}
