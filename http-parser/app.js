@@ -7,11 +7,6 @@ http.createServer( function ( req, res ) {
         'Content-Type': 'text/html'
     } );
 
-    let html = fs.readFileSync( __dirname + '/index.htm', 'utf8' );
-    let message = 'sup!';
-
-    html = html.replace( '{message}', message );
-
-    res.end( html );
+    fs.createReadStream( __dirname + '/index.htm' ).pipe( res );
 
 } ).listen( 9000, '127.0.0.1' );
