@@ -11,6 +11,15 @@ let arr = [
 
 let filter = arr.filter( obj => obj.name === 'ben');
 filter.forEach((item, index) => {
-    console.log(item.name);
+    console.log('filtered: ', item.name);
 });
 
+let array = [
+    123,
+    456,
+    789
+];
+
+console.log('Joined array:');
+let join = array.join("\n");
+console.log(join);
