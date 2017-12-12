@@ -21,5 +21,5 @@ let array = [
 ];
 
 console.log('Joined array:');
-let join = array.join("\n");
+let join = array.join("\n").trim();
 console.log(join);
