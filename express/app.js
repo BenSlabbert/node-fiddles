@@ -4,6 +4,11 @@ let port = process.env.PORT || 9001;
 
 app.use( '/assets', express.static( __dirname + '/public' ) );
 
+app.use( '/', function ( req, res, next ) {
+    console.log( 'my middleware' );
+    next();
+} );
+
 app.get( '/', function ( req, res ) {
     res.send( '<html>' +
         '<head>' +
