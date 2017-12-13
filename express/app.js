@@ -2,8 +2,15 @@ let express = require( 'express' );
 let app = express();
 let port = process.env.PORT || 9001;
 
+app.use( '/assets', express.static( __dirname + '/public' ) );
+
 app.get( '/', function ( req, res ) {
-    res.send( 'hello' );
+    res.send( '<html>' +
+        '<head>' +
+        '<link href="assets/style.css" type="text/css" rel="stylesheet" />' +
+        '</head>' +
+        '<body>hello</body>' +
+        '</html>' );
 } );
 
 app.get( '/api', function ( req, res ) {
