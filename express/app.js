@@ -12,4 +12,8 @@ app.get( '/api', function ( req, res ) {
     } );
 } );
 
+app.get( '/person/:id', function ( req, res ) {
+    res.send( 'person: ' + req.params.id );
+} );
+
 app.listen( port );
