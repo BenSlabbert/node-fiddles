@@ -9,5 +9,6 @@ Paying with some functions in NodeJS like:
 * pipes/streams
 * promises
 * qr-code/barcodes
+* express
 
 Also following the course: https://www.udemy.com/understand-nodejs/
