@@ -1,3 +1,5 @@
 .idea
 *.png
 node_modules
+express-generator/node_modules
+
