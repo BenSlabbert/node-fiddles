@@ -6,7 +6,7 @@ services:
     image: mongo
     restart: always
     environment:
-      MONGO_INITDB_DATABASE: addresses
+      MONGO_INITDB_DATABASE: addressbook
     ports:
     - "27017:27017"
     volumes:
