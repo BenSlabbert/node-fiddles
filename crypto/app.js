@@ -18,3 +18,6 @@ let password = crypto.randomFillSync( buf );
 
 let encrypt = aes.encrypt( 'hello', password, iv );
 let decrypt = aes.decrypt( encrypt, password, iv );
+
+let hash = crypto.createHash( 'sha256' ).update( 'alice', 'utf8' ).digest();
+console.log( hash );
